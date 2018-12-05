@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: aliceblue
+        }
+
+        img {
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CAT FACTS</h1>
+    <h3>Bored, Try this Activity : <%= link %></h3>
+    <% for (let index = 0; index < text.length; index++) {%>
+    <h5>
+        <%= text[index] %>
+    </h5>
+    <hr>
+    <% } %>
+
+</body>
+
+</html>
