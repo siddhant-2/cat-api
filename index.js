@@ -26,7 +26,7 @@ request("https://talaikis.com/api/quotes/random/", function(err,result, data){
     }
 );
 app.get('/', function (req, res) {
-    res.sendFile(__dirname + '/views/one.ejs');
+    res.render('one', { img_link: b, text: arr, activity: act, quote: quote });
 });
 
 app.get('/catpic', function (req, res) {
