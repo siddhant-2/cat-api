@@ -26,6 +26,10 @@ request("https://talaikis.com/api/quotes/random/", function(err,result, data){
     }
 );
 app.get('/', function (req, res) {
+    res.sendFile(__dirname + '/views/one.ejs');
+});
+
+app.get('/catpic', function (req, res) {
     request("https://api.thecatapi.com/v1/images/search?api_key=f77f5974-32a1-48d6-b981-a40ca65a9ebb", function (err, result, data) {
         if (err) {
             console.log(err)
@@ -34,11 +38,12 @@ app.get('/', function (req, res) {
             a = JSON.parse(data);
             //console.log(a);
             console.log(a[0].url);
-            b=a[0].url;
-            res.render('one', {img_link: b, text : arr, activity: act, quote: quote});
+            b = a[0].url;
+            res.render('one', { img_link: b, text: arr, activity: act, quote: quote });
 
         }   //res.send('result: '+a.activity);
     });
+
 });
 
 app.get('/catfacts', function (req, res) {
